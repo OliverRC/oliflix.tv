@@ -61,7 +61,7 @@ export default function Home() {
           {links.map(link => {
             return (
               <li>
-                <LinkElement link={link} />
+                <LinkElement link={link} key={link.name} />
               </li>
             )
           })}
