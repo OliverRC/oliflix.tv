@@ -60,8 +60,8 @@ export default function Home() {
         <ul className="space-y-4">
           {links.map(link => {
             return (
-              <li>
-                <LinkElement link={link} key={link.name} />
+              <li key={link.name}>
+                <LinkElement link={link} />
               </li>
             )
           })}
