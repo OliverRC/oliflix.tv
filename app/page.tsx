@@ -41,14 +41,16 @@ export default function Home() {
   }]
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center sm:justify-between sm:p-24 p-2">
 
-      <Image src="/oliflix-icon.svg" alt="Oliflix" width={60} height={60} className='absolute top-8 left-8' />
+      <div className='flex flex-col items-center p-4 sm:p-10'>
 
-      <div className='flex flex-col items-center p-10'>
+        <div className='flex items-center'>
+          <Image src="/oliflix-icon.svg" alt="Oliflix" width={60} height={60} className='block sm:absolute sm:top-8 sm:left-8' />
+          <Image src="/oliflix-text.svg" width={400} height={200} alt='Oliflix' className='mx-auto pb-2 sm:pb-8 h-20 sm:h-36' />
+        </div>
 
-        <Image src="/oliflix-text.svg" width={400} height={200} alt='Oliflix' className='mx-auto pb-8 ' />
-        <div className="text-5xl font-extrabold">
+        <div className="text-2xl md:text-5xl sm:text-3xl font-extrabold">
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-rose-500 via-purple-500 to-indigo-600">
             Lights, camera, bingewatch!
           </span>
@@ -56,7 +58,7 @@ export default function Home() {
       </div>
 
 
-      <div>
+      <div className='py-6'>
         <ul className="space-y-4">
           {links.map(link => {
             return (
