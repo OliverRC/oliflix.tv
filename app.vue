@@ -1,5 +1,12 @@
+<!-- @format -->
+
 <template>
-  <div>
-    <NuxtPage />
+  <div class="flex min-h-screen flex-col bg-background">
+    <AppHeader />
+    <div class="flex-1 bg-background">
+      <main class="max-w-[1400px]">
+        <NuxtPage />
+      </main>
+    </div>
   </div>
 </template>
