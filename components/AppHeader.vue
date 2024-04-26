@@ -11,7 +11,7 @@
       </div>
 
       <div
-        class="flex flex-1 items-center justify-between space-x-2 md:justify-end"
+        class="flex flex-1 items-center space-x-2 justify-end"
       >
         <Button as-child>
           <a href="https://ko-fi.com/oliflix" target="_blank">Leave a Tip :)</a>

@@ -49,6 +49,13 @@ const links: Link[] = [
     description: "Manages series/tv/anime stuff!",
   },
   {
+    name: "NZBGet",
+    url: "https://nzbget.oliflix.tv",
+    logo: "/tautulli-logo.svg",
+    type: "Admin App",
+    description: "For downloading stuff!",
+  },
+  {
     name: "Tautalli",
     url: "https://tautulli.oliflix.tv",
     logo: "/tautulli-logo.svg",
