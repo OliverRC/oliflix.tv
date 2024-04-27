@@ -6,11 +6,11 @@ date: 2024-04-27
 
 # Setup
 
-The main thing to make sure that is correctly configure in Plex is Direct Play and or Direct Stream. This will ensure that the server is not transcoding the media on the fly and will save on CPU usage.
+The main thing to make sure that is correctly configured in Plex is Direct Play and or Direct Stream. This will ensure that the server is not transcoding the media on the fly and will save on CPU usage.
 
 #### What is Transcoding?
 
-Transcoding is the process of converting media from one format to another. This is done when the client device cannot play the media in its original format. This is a CPU intensive process and unfortunately OliFlix likely will no be able to perform this in real time which will lead to buffering and paused playback.
+Transcoding is the process of converting media from one format to another. This is done when the client device cannot play the media in its original format. This is a CPU intensive process and unfortunately OliFlix likely will not be able to perform this in real time which will lead to buffering and paused playback.
 
 ### Plex Settings
 
