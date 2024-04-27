@@ -21,16 +21,23 @@
     <ContentList path="/posts">
       <template #default="{ list }">
         <template v-for="post in list" :key="post._path">
-          <div class="border border-border rounded-md p-6 space-y-1 hover:ring-1 hover:ring-foreground hover:border-foreground transition-all duration-200">
+          <div
+            class="border border-border rounded-md p-6 space-y-1 hover:ring-1 hover:ring-foreground hover:border-foreground transition-all duration-200"
+          >
             <a :href="post._path" class="flex">
-              <h2 class="text-foreground font-semibold truncate flex items-center gap-1.5 text-lg">{{ post.title }}</h2>
-              <span class="ml-auto text-muted-foreground text-sm">{{
-                // a nicely formatted date
-                post.date
-              }}
+              <h2
+                class="text-foreground font-semibold truncate flex items-center gap-1.5 text-lg"
+              >
+                {{ post.title }}
+              </h2>
+              <span class="ml-auto text-muted-foreground text-sm"
+                >{{
+                  // a nicely formatted date
+                  formatDate(post.date)
+                }}
               </span>
             </a>
-          
+
             <p class="text-muted-foreground">{{ post.description }}</p>
           </div>
         </template>
@@ -45,6 +52,7 @@
 <script setup lang="ts">
 import LogoText from "@/assets/images/oliflix-text.svg";
 import type { Link } from "@/types";
+import { formatDate } from "@/lib/utils";
 
 const links: Link[] = [
   {
@@ -90,4 +98,5 @@ const links: Link[] = [
     description: "Monitoring plex server stuff!",
   },
 ];
+
 </script>

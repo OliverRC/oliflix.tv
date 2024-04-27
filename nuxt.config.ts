@@ -8,6 +8,10 @@ export default defineNuxtConfig({
       link: [{ rel: 'stylesheet', href: 'https://kit.fontawesome.com/c2ef00ba70.css' }]
     }
   },
+  components: {
+         global: true,
+         dirs: ['~/components']
+  },
   shadcn: {
     /**
      * Prefix for all the imported component
