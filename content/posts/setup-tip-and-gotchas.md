@@ -15,7 +15,7 @@ Transcoding is the process of converting media from one format to another. This 
 ### Plex Settings
 
 In Plex on whatever device you are using. Go to 'Settings' -> 'Video' (or similar).
-Look for any settings that say "Remote Streaming Quality" or "Local Streaming Quality" and set them to "Original/Maximum".
+Look for any settings that say "Remote Streaming Quality" and set them to "Original/Maximum".
 
 # Gotchas
 
