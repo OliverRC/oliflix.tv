@@ -9,7 +9,7 @@
         >
       </div>
     </div>
-    <div class="grid  md:grid-cols-3 gap-3 md:gap-5 mt-12">
+    <div class="grid  md:grid-cols-3 gap-3 md:gap-5 mt-6">
       <LinkCard v-for="link in links" :key="link.name" :link="link" />
     </div>
   </div>
@@ -23,42 +23,42 @@ const links: Link[] = [
   {
     name: "Plex",
     url: "https://app.plex.tv/desktop",
-    logo: "/plex-logo.svg",
+    logo: "/plex-icon.svg",
     type: "User App",
     description: "Where you watch stuff!",
   },
   {
     name: "Overseerr",
     url: "https://overseerr.oliflix.tv",
-    logo: "/overseerr-logo.svg",
+    logo: "/overseerr-icon.svg",
     type: "User App",
     description: "Where you request stuff!",
   },
   {
     name: "Radarr",
     url: "https://radarr.oliflix.tv",
-    logo: "/radarr-logo.png",
+    logo: "/radarr-icon.svg",
     type: "Admin App",
     description: "Manages movie stuff!",
   },
   {
     name: "Sonarr",
     url: "https://sonarr.oliflix.tv",
-    logo: "/sonarr-logo.svg",
+    logo: "/sonarr-icon.svg",
     type: "Admin App",
     description: "Manages series/tv/anime stuff!",
   },
   {
     name: "NZBGet",
     url: "https://nzbget.oliflix.tv",
-    logo: "/tautulli-logo.svg",
+    logo: "/nzbget-icon.png",
     type: "Admin App",
     description: "For downloading stuff!",
   },
   {
     name: "Tautalli",
     url: "https://tautulli.oliflix.tv",
-    logo: "/tautulli-logo.svg",
+    logo: "/tautulli-icon.png",
     type: "Admin App",
     description: "Monitoring plex server stuff!",
   },

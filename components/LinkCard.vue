@@ -4,21 +4,23 @@
   >
     <div class="space-y-2">
       <div class="flex gap-x-3">
-        <img :src="link.logo" alt="Plex" class="size-8" />
+        <Avatar>
+          <AvatarImage
+            :src="link.logo"
+            :alt="link.name"
+          />
+          <AvatarFallback>P</AvatarFallback>
+        </Avatar>
         <div class="flex flex-col">
-          <a
-            :href="link.url"
-            class="font-semibold text-foreground"
-            >{{ link.name }}</a
-          >
-          <a
-            :href="link.url"
-            class="text-muted-foreground text-sm"
-            >{{  link.url  }}</a
-          >
+          <a :href="link.url" class="font-semibold text-foreground">{{
+            link.name
+          }}</a>
+          <a :href="link.url" class="text-muted-foreground text-sm">{{
+            link.url
+          }}</a>
         </div>
       </div>
-      <Badge variant="secondary">{{  link.type  }}</Badge>
+      <Badge variant="secondary">{{ link.type }}</Badge>
       <p class="text-xs text-muted-foreground">
         {{ link.description }}
       </p>
@@ -27,11 +29,12 @@
 </template>
 
 <script setup lang="ts">
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
-import type { Link } from '@/types'
+import type { Link } from "@/types";
 
-defineProps<{ 
-  link: Link
+defineProps<{
+  link: Link;
 }>();
 </script>
