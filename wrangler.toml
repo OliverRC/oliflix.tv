@@ -8,7 +8,7 @@ directory = "./dist"
 # https://oliflix-tv.<account>.workers.dev, then run `wrangler deploy`.
 # Cloudflare will take over the oliflix.tv DNS record automatically
 # (domain is already on Cloudflare).
-#
-# [[routes]]
-# pattern = "oliflix.tv"
-# custom_domain = true
+
+[[routes]]
+pattern = "oliflix.tv"
+custom_domain = true
