@@ -3,3 +3,12 @@ compatibility_date = "2026-04-18"
 
 [assets]
 directory = "./dist"
+
+# DNS cutover: uncomment the block below once the Worker is verified at
+# https://oliflix-tv.<account>.workers.dev, then run `wrangler deploy`.
+# Cloudflare will take over the oliflix.tv DNS record automatically
+# (domain is already on Cloudflare).
+#
+# [[routes]]
+# pattern = "oliflix.tv"
+# custom_domain = true

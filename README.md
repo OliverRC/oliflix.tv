@@ -56,6 +56,34 @@ Push to `main` — GitHub Actions builds and deploys automatically via `cloudfla
 | `CLOUDFLARE_API_TOKEN` | CF API token with *Edit Cloudflare Workers* permissions |
 | `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID |
 
+## DNS cutover (one-time)
+
+### Step 1 — Verify at workers.dev
+After the first successful GitHub Actions deploy, check the site at:
+```
+https://oliflix-tv.<your-account-id>.workers.dev
+```
+Verify: all six cards render, icons load, hover effects work, looks correct on mobile.
+
+### Step 2 — Add custom domain
+Uncomment the `[[routes]]` block in `wrangler.toml`:
+```toml
+[[routes]]
+pattern = "oliflix.tv"
+custom_domain = true
+```
+Push to `main`. GitHub Actions will redeploy and CF will bind `oliflix.tv` to the Worker.
+DNS propagation is near-instant (domain is already on Cloudflare).
+
+### Step 3 — Pause Vercel
+In the Vercel dashboard, **pause** (do not delete) the project.
+Leave paused for 7 days as a rollback option, then delete.
+
+### Rollback
+Re-enable the Vercel project and remove the `[[routes]]` block from `wrangler.toml`.
+
+---
+
 ## Project structure
 
 ```
