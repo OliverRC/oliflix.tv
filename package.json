@@ -4,7 +4,7 @@
   "scripts": {
     "build": "bash scripts/build.sh",
     "deploy": "wrangler deploy",
-    "dev": "wrangler dev"
+    "dev": "bash scripts/dev.sh"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
