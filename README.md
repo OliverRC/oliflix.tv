@@ -5,7 +5,7 @@ Personal media hub — a single-page synthwave landing page linking to the olifl
 ## Stack
 
 - **HTML** — hand-written `src/index.html`
-- **CSS** — [Tailwind CSS v4](https://tailwindcss.com) standalone CLI, custom synthwave theme
+- **CSS** — [Tailwind CSS v4](https://tailwindcss.com) (`@tailwindcss/cli` via npm), custom synthwave theme
 - **Hosting** — [Cloudflare Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/)
 - **Deploy** — GitHub Actions on push to `main`
 
@@ -13,21 +13,9 @@ Personal media hub — a single-page synthwave landing page linking to the olifl
 
 ### Prerequisites
 
-Download the Tailwind v4 standalone CLI (macOS arm64):
-
 ```bash
-curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v4.2.2/tailwindcss-macos-arm64
-chmod +x tailwindcss
+npm install
 ```
-
-Or macOS x64:
-
-```bash
-curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v4.2.2/tailwindcss-macos-x64
-chmod +x tailwindcss
-```
-
-Place the binary in the repo root (it is gitignored) or on your `$PATH`.
 
 ### Build
 

@@ -10,33 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
-    env:
-      TAILWIND_VERSION: "4.2.2"
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache Tailwind CLI binary
-        id: cache-tailwind
-        uses: actions/cache@v4
-        with:
-          path: ./tailwindcss
-          key: tailwindcss-linux-x64-${{ env.TAILWIND_VERSION }}
-
-      - name: Download Tailwind CLI (if not cached)
-        if: steps.cache-tailwind.outputs.cache-hit != 'true'
-        run: |
-          curl -sLo tailwindcss \
-            "https://github.com/tailwindlabs/tailwindcss/releases/download/v${{ env.TAILWIND_VERSION }}/tailwindcss-linux-x64"
-          chmod +x tailwindcss
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build site
-        run: |
-          mkdir -p dist
-          ./tailwindcss -i src/input.css -o dist/app.css --minify
-          cp src/index.html dist/index.html
-          cp -r public/. dist/
+        run: npm run build
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
