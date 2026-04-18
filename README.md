@@ -1,56 +1,72 @@
-# Nuxt 3 Minimal Starter
+# oliflix.tv
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal media hub — a single-page synthwave landing page linking to the oliflix.tv self-hosted services (Plex, Seerr, Radarr, Sonarr, NZBGet, Tautulli).
 
-## Setup
+## Stack
 
-Make sure to install the dependencies:
+- **HTML** — hand-written `src/index.html`
+- **CSS** — [Tailwind CSS v4](https://tailwindcss.com) standalone CLI, custom synthwave theme
+- **Hosting** — [Cloudflare Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/)
+- **Deploy** — GitHub Actions on push to `main`
+
+## Local development
+
+### Prerequisites
+
+Download the Tailwind v4 standalone CLI (macOS arm64):
 
 ```bash
-npm install
+curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v4.2.2/tailwindcss-macos-arm64
+chmod +x tailwindcss
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Or macOS x64:
 
 ```bash
-npm run dev
+curl -sLo tailwindcss https://github.com/tailwindlabs/tailwindcss/releases/download/v4.2.2/tailwindcss-macos-x64
+chmod +x tailwindcss
 ```
 
-## Production
+Place the binary in the repo root (it is gitignored) or on your `$PATH`.
 
-Build the application for production:
+### Build
 
 ```bash
 npm run build
 ```
 
-Locally preview production build:
+Produces `dist/` with `index.html`, `app.css`, and all assets.
+
+### Preview locally
 
 ```bash
-npm run preview
+npm run dev
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Serves the site at `http://localhost:8787` via Wrangler.
 
+## Deploy
 
-## Vercel
+Push to `main` — GitHub Actions builds and deploys automatically via `cloudflare/wrangler-action`.
 
-install Vercel CLI
+### Required GitHub secrets
 
-```
-npm i -g vercel
-```
+| Secret | Description |
+|--------|-------------|
+| `CLOUDFLARE_API_TOKEN` | CF API token with *Edit Cloudflare Workers* permissions |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID |
 
-Connect to a project
-
-```
-vercel link
-```
-
-Pull your latest environment variables
+## Project structure
 
 ```
-vercel env pull .env
+src/
+  index.html        # single page
+  input.css         # Tailwind entry + synthwave theme
+scripts/
+  build.sh          # build pipeline
+public/             # static assets (icons, favicon) — copied to dist/
+dist/               # build output (gitignored)
+.github/workflows/
+  deploy.yml        # CI/CD
+wrangler.toml       # Cloudflare Workers config
 ```

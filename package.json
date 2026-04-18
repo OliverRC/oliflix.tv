@@ -1,33 +1,12 @@
 {
-  "name": "nuxt-app",
+  "name": "oliflix-tv",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev  --dotenv .env",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "deploy": "nuxt"
+    "build": "bash scripts/build.sh",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.12.1",
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "@tailwindcss/typography": "^0.5.13",
-    "nuxt": "^3.11.2",
-    "nuxt-svgo": "^4.0.0",
-    "shadcn-nuxt": "^0.10.2",
-    "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "@neondatabase/serverless": "^0.9.1",
-    "@vueuse/core": "^10.9.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "lucide-vue-next": "^0.372.0",
-    "radix-vue": "^1.7.1",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "wrangler": "^3"
   }
 }
