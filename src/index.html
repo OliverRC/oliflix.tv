@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oliflix.tv</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Preload hero art -->
+    <link rel="preload" as="image" href="/oliflix-wordmark.svg" />
+
+    <!-- Google Fonts — Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Compiled stylesheet -->
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+
+  <body>
+    <!-- Starfield background layer (sits behind everything) -->
+    <div class="starfield" aria-hidden="true"></div>
+
+    <div class="page-wrapper">
+
+      <!-- ═══════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════ -->
+      <header class="hero">
+        <img
+          src="/oliflix-wordmark.svg"
+          alt="OLIFLIX"
+          class="hero-wordmark"
+          width="480"
+          height="120"
+        />
+        <p class="hero-tagline">Lights, camera&nbsp;… binge!</p>
+      </header>
+
+      <!-- ═══════════════════════════════════════════
+           SERVICE LINK GRID
+           ═══════════════════════════════════════════ -->
+      <main>
+        <div class="card-grid">
+
+          <!-- Plex -->
+          <a
+            href="https://app.plex.tv/desktop"
+            class="card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Plex — Where you watch stuff"
+            style="--card-accent: #E5A00D; --card-glow: rgba(229,160,13,0.55); --card-glow-wide: rgba(229,160,13,0.15);"
+          >
+            <span class="card-stripe" aria-hidden="true"></span>
+            <div class="card-body">
+              <img src="/plex-icon.svg" alt="" class="card-icon" width="40" height="40" />
+              <span class="card-name">Plex</span>
+              <span class="card-type">User App</span>
+              <p class="card-description">Where you watch stuff!</p>
+            </div>
+          </a>
+
+          <!-- Seerr -->
+          <a
+            href="https://seerr.oliflix.tv"
+            class="card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Seerr — Where you request stuff"
+            style="--card-accent: #00C2E0; --card-glow: rgba(0,194,224,0.55); --card-glow-wide: rgba(0,194,224,0.15);"
+          >
+            <span class="card-stripe" aria-hidden="true"></span>
+            <div class="card-body">
+              <img src="/overseerr-icon.svg" alt="" class="card-icon" width="40" height="40" />
+              <span class="card-name">Seerr</span>
+              <span class="card-type">User App</span>
+              <p class="card-description">Where you request stuff!</p>
+            </div>
+          </a>
+
+          <!-- Radarr -->
+          <a
+            href="https://radarr.oliflix.tv"
+            class="card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Radarr — Manages movie stuff"
+            style="--card-accent: #FAC800; --card-glow: rgba(250,200,0,0.55); --card-glow-wide: rgba(250,200,0,0.15);"
+          >
+            <span class="card-stripe" aria-hidden="true"></span>
+            <div class="card-body">
+              <img src="/radarr-icon.svg" alt="" class="card-icon" width="40" height="40" />
+              <span class="card-name">Radarr</span>
+              <span class="card-type">Admin App</span>
+              <p class="card-description">Manages movie stuff!</p>
+            </div>
+          </a>
+
+          <!-- Sonarr -->
+          <a
+            href="https://sonarr.oliflix.tv"
+            class="card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Sonarr — Manages series, TV and anime stuff"
+            style="--card-accent: #35C5F4; --card-glow: rgba(53,197,244,0.55); --card-glow-wide: rgba(53,197,244,0.15);"
+          >
+            <span class="card-stripe" aria-hidden="true"></span>
+            <div class="card-body">
+              <img src="/sonarr-icon.svg" alt="" class="card-icon" width="40" height="40" />
+              <span class="card-name">Sonarr</span>
+              <span class="card-type">Admin App</span>
+              <p class="card-description">Manages series/tv/anime stuff!</p>
+            </div>
+          </a>
+
+          <!-- NZBGet -->
+          <a
+            href="https://nzbget.oliflix.tv"
+            class="card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="NZBGet — For downloading stuff"
+            style="--card-accent: #FF6B1A; --card-glow: rgba(255,107,26,0.55); --card-glow-wide: rgba(255,107,26,0.15);"
+          >
+            <span class="card-stripe" aria-hidden="true"></span>
+            <div class="card-body">
+              <img src="/nzbget-icon.png" alt="" class="card-icon" width="40" height="40" />
+              <span class="card-name">NZBGet</span>
+              <span class="card-type">Admin App</span>
+              <p class="card-description">For downloading stuff!</p>
+            </div>
+          </a>
+
+          <!-- Tautulli -->
+          <a
+            href="https://tautulli.oliflix.tv"
+            class="card"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Tautulli — Monitoring Plex server stuff"
+            style="--card-accent: #CC3333; --card-glow: rgba(204,51,51,0.55); --card-glow-wide: rgba(204,51,51,0.15);"
+          >
+            <span class="card-stripe" aria-hidden="true"></span>
+            <div class="card-body">
+              <img src="/tautulli-icon.png" alt="" class="card-icon" width="40" height="40" />
+              <span class="card-name">Tautulli</span>
+              <span class="card-type">Admin App</span>
+              <p class="card-description">Monitoring plex server stuff!</p>
+            </div>
+          </a>
+
+        </div>
+      </main>
+
+      <!-- ═══════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════ -->
+      <footer>
+        <p class="footer-colophon">oliflix.tv &mdash; personal media hub</p>
+      </footer>
+
+    </div><!-- /page-wrapper -->
+  </body>
+</html>

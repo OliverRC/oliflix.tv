@@ -1,6 +1,9 @@
 # Build output — ephemeral, never committed
 dist/
 
+# Tailwind standalone CLI binary (platform-specific, downloaded locally)
+tailwindcss
+
 # Node dependencies
 node_modules/
 
