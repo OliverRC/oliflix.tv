@@ -17,6 +17,9 @@ cp src/index.html dist/index.html
 echo "→ Copying public assets"
 cp -r public/. dist/
 
+echo "→ Compiling CSS (initial build)"
+./node_modules/.bin/tailwindcss -i src/input.css -o dist/app.css
+
 echo "→ Starting Tailwind watch (src/input.css → dist/app.css)"
 ./node_modules/.bin/tailwindcss -i src/input.css -o dist/app.css --watch &
 
@@ -32,4 +35,4 @@ echo "→ Starting Tailwind watch (src/input.css → dist/app.css)"
 ) &
 
 echo "→ Starting wrangler dev"
-./node_modules/.bin/wrangler dev
+./node_modules/.bin/wrangler dev --live-reload
