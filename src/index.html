@@ -28,12 +28,12 @@
     <!-- Starfield background layer (sits behind everything) -->
     <div class="starfield" aria-hidden="true"></div>
 
-    <div class="page-wrapper">
+    <div class="min-h-screen flex flex-col items-center max-w-[1400px] mx-auto px-4">
 
       <!-- ═══════════════════════════════════════════
            HERO
            ═══════════════════════════════════════════ -->
-      <header class="hero">
+      <header class="flex flex-col items-center justify-center text-center py-16 px-4 w-full">
         <img
           src="/hero.png"
           alt="OLIFLIX"
@@ -60,11 +60,11 @@
             style="--card-accent: #E5A00D; --card-glow: rgba(229,160,13,0.55); --card-glow-wide: rgba(229,160,13,0.15);"
           >
             <span class="card-stripe" aria-hidden="true"></span>
-            <div class="card-body">
-              <img src="/plex-icon.svg" alt="" class="card-icon" width="40" height="40" />
-              <span class="card-name">Plex</span>
-              <span class="card-type">User App</span>
-              <p class="card-description">Where you watch stuff!</p>
+            <div class="flex flex-col flex-1 p-5 pl-6 gap-2">
+              <img src="/plex-icon.svg" alt="" class="w-10 h-10 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" width="40" height="40" />
+              <span class="font-display text-base font-bold tracking-widest uppercase text-[var(--color-text-bright)]">Plex</span>
+              <span class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[var(--card-accent)] opacity-85">User App</span>
+              <p class="text-[0.8rem] text-[var(--color-text-muted)] leading-[1.4] mt-auto">Where you watch stuff!</p>
             </div>
           </a>
 
@@ -78,11 +78,11 @@
             style="--card-accent: #00C2E0; --card-glow: rgba(0,194,224,0.55); --card-glow-wide: rgba(0,194,224,0.15);"
           >
             <span class="card-stripe" aria-hidden="true"></span>
-            <div class="card-body">
-              <img src="/overseerr-icon.svg" alt="" class="card-icon" width="40" height="40" />
-              <span class="card-name">Seerr</span>
-              <span class="card-type">User App</span>
-              <p class="card-description">Where you request stuff!</p>
+            <div class="flex flex-col flex-1 p-5 pl-6 gap-2">
+              <img src="/overseerr-icon.svg" alt="" class="w-10 h-10 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" width="40" height="40" />
+              <span class="font-display text-base font-bold tracking-widest uppercase text-[var(--color-text-bright)]">Seerr</span>
+              <span class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[var(--card-accent)] opacity-85">User App</span>
+              <p class="text-[0.8rem] text-[var(--color-text-muted)] leading-[1.4] mt-auto">Where you request stuff!</p>
             </div>
           </a>
 
@@ -96,11 +96,11 @@
             style="--card-accent: #FAC800; --card-glow: rgba(250,200,0,0.55); --card-glow-wide: rgba(250,200,0,0.15);"
           >
             <span class="card-stripe" aria-hidden="true"></span>
-            <div class="card-body">
-              <img src="/radarr-icon.svg" alt="" class="card-icon" width="40" height="40" />
-              <span class="card-name">Radarr</span>
-              <span class="card-type">Admin App</span>
-              <p class="card-description">Manages movie stuff!</p>
+            <div class="flex flex-col flex-1 p-5 pl-6 gap-2">
+              <img src="/radarr-icon.svg" alt="" class="w-10 h-10 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" width="40" height="40" />
+              <span class="font-display text-base font-bold tracking-widest uppercase text-[var(--color-text-bright)]">Radarr</span>
+              <span class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[var(--card-accent)] opacity-85">Admin App</span>
+              <p class="text-[0.8rem] text-[var(--color-text-muted)] leading-[1.4] mt-auto">Manages movie stuff!</p>
             </div>
           </a>
 
@@ -114,11 +114,11 @@
             style="--card-accent: #35C5F4; --card-glow: rgba(53,197,244,0.55); --card-glow-wide: rgba(53,197,244,0.15);"
           >
             <span class="card-stripe" aria-hidden="true"></span>
-            <div class="card-body">
-              <img src="/sonarr-icon.svg" alt="" class="card-icon" width="40" height="40" />
-              <span class="card-name">Sonarr</span>
-              <span class="card-type">Admin App</span>
-              <p class="card-description">Manages series/tv/anime stuff!</p>
+            <div class="flex flex-col flex-1 p-5 pl-6 gap-2">
+              <img src="/sonarr-icon.svg" alt="" class="w-10 h-10 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" width="40" height="40" />
+              <span class="font-display text-base font-bold tracking-widest uppercase text-[var(--color-text-bright)]">Sonarr</span>
+              <span class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[var(--card-accent)] opacity-85">Admin App</span>
+              <p class="text-[0.8rem] text-[var(--color-text-muted)] leading-[1.4] mt-auto">Manages series/tv/anime stuff!</p>
             </div>
           </a>
 
@@ -132,11 +132,11 @@
             style="--card-accent: #FF6B1A; --card-glow: rgba(255,107,26,0.55); --card-glow-wide: rgba(255,107,26,0.15);"
           >
             <span class="card-stripe" aria-hidden="true"></span>
-            <div class="card-body">
-              <img src="/nzbget-icon.png" alt="" class="card-icon" width="40" height="40" />
-              <span class="card-name">NZBGet</span>
-              <span class="card-type">Admin App</span>
-              <p class="card-description">For downloading stuff!</p>
+            <div class="flex flex-col flex-1 p-5 pl-6 gap-2">
+              <img src="/nzbget-icon.png" alt="" class="w-10 h-10 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" width="40" height="40" />
+              <span class="font-display text-base font-bold tracking-widest uppercase text-[var(--color-text-bright)]">NZBGet</span>
+              <span class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[var(--card-accent)] opacity-85">Admin App</span>
+              <p class="text-[0.8rem] text-[var(--color-text-muted)] leading-[1.4] mt-auto">For downloading stuff!</p>
             </div>
           </a>
 
@@ -150,11 +150,11 @@
             style="--card-accent: #CC3333; --card-glow: rgba(204,51,51,0.55); --card-glow-wide: rgba(204,51,51,0.15);"
           >
             <span class="card-stripe" aria-hidden="true"></span>
-            <div class="card-body">
-              <img src="/tautulli-icon.png" alt="" class="card-icon" width="40" height="40" />
-              <span class="card-name">Tautulli</span>
-              <span class="card-type">Admin App</span>
-              <p class="card-description">Monitoring plex server stuff!</p>
+            <div class="flex flex-col flex-1 p-5 pl-6 gap-2">
+              <img src="/tautulli-icon.png" alt="" class="w-10 h-10 object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" width="40" height="40" />
+              <span class="font-display text-base font-bold tracking-widest uppercase text-[var(--color-text-bright)]">Tautulli</span>
+              <span class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[var(--card-accent)] opacity-85">Admin App</span>
+              <p class="text-[0.8rem] text-[var(--color-text-muted)] leading-[1.4] mt-auto">Monitoring plex server stuff!</p>
             </div>
           </a>
 
@@ -172,7 +172,7 @@
           rel="noopener noreferrer"
           aria-label="Support oliflix on Ko-fi — opens in new tab"
         ><span aria-hidden="true">&#9749;</span> Leave a Tip</a>
-        <p class="footer-colophon">oliflix.tv &mdash; personal media hub</p>
+        <p class="w-full text-center py-6 px-4 font-display text-[0.65rem] tracking-[0.2em] uppercase text-[var(--color-text-muted)] border-t border-white/5">oliflix.tv &mdash; personal media hub</p>
       </footer>
 
     </div><!-- /page-wrapper -->

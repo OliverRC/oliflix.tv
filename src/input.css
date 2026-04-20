@@ -209,34 +209,8 @@
 }
 
 /* ============================================================
-   PAGE LAYOUT
-   ============================================================ */
-
-@layer base {
-  .page-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-}
-
-/* ============================================================
    HERO SECTION
    ============================================================ */
-
-@utility hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 1rem 3rem;
-  width: 100%;
-}
 
 @utility hero-wordmark {
   width: min(480px, 90vw);
@@ -308,16 +282,6 @@
   text-decoration: none;
 }
 
-@utility card-hover {
-  box-shadow:
-    inset 1px 1px 0 rgba(255,255,255,0.2),
-    inset -1px -1px 0 rgba(0,0,0,0.5),
-    2px 2px 0 rgba(0,0,0,0.5),
-    0 0 30px var(--card-accent, rgba(255,45,120,0.5)),
-    0 0 60px rgba(var(--card-accent-rgb, 255,45,120), 0.2);
-  transform: scale(1.03) rotate(-0.4deg);
-}
-
 /* Native CSS hover — targets .card elements */
 @layer base {
   .card:hover,
@@ -344,61 +308,9 @@
   box-shadow: 0 0 12px var(--card-accent, var(--color-sunset-magenta));
 }
 
-@utility card-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
-  gap: 0.5rem;
-}
-
-@utility card-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-}
-
-@utility card-name {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-bright);
-}
-
-@utility card-type {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--card-accent, var(--color-sunset-magenta));
-  opacity: 0.85;
-}
-
-@utility card-description {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  line-height: 1.4;
-  margin-top: auto;
-}
-
 /* ============================================================
    FOOTER
    ============================================================ */
-
-@utility footer-colophon {
-  width: 100%;
-  text-align: center;
-  padding: 1.5rem 1rem 2rem;
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
 
 @utility kofi-donate {
   display: inline-flex;
