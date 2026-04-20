@@ -12,3 +12,7 @@ directory = "./dist"
 [[routes]]
 pattern = "oliflix.tv"
 custom_domain = true
+
+[[routes]]
+pattern = "www.oliflix.tv"
+custom_domain = true
