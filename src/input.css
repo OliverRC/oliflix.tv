@@ -254,7 +254,11 @@
 }
 
 /* ============================================================
-   SERVICE CARD  — arcade cartridge / VHS case treatment
+   SERVICE CARD  — interactive glowing grid cards
+   Technique: Hyperplexed "masked border glow"
+   JS sets --mouse-x/--mouse-y on every card simultaneously.
+   ::before = border glow layer (peeks through 1px gap under .card-content)
+   ::after  = soft background highlight on hovered card
    ============================================================ */
 
 @utility card {
@@ -262,50 +266,87 @@
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  overflow: hidden;
-  background: linear-gradient(145deg, var(--color-void-mid), var(--color-void-surface));
-  border: 1px solid rgba(255,255,255,0.1);
-
-  /* Chrome bevel effect: inset highlight top-left, shadow bottom-right */
-  box-shadow:
-    inset 1px 1px 0 rgba(255,255,255,0.15),
-    inset -1px -1px 0 rgba(0,0,0,0.4),
-    2px 2px 0 rgba(0,0,0,0.5),
-    0 0 20px rgba(0,0,0,0.4);
-
+  /* Dark base — the "glow" peeks through as the border */
+  background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
-  transition:
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-
   min-height: 160px;
   text-decoration: none;
 }
 
-/* Native CSS hover — targets .card elements */
+/* Border glow layer — visible on ALL cards when cursor is nearby */
 @layer base {
-  .card:hover,
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      var(--card-accent, var(--color-sunset-magenta)),
+      transparent 40%
+    );
+    z-index: 0;
+  }
+
+  /* Background highlight — only brightens the hovered card */
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(
+      400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      color-mix(in srgb, var(--card-accent, var(--color-sunset-magenta)) 12%, transparent),
+      transparent 60%
+    );
+    z-index: 0;
+  }
+
+  /* Reveal border glow on the whole grid when any card is hovered */
+  .card-grid:has(.card:hover) .card::before {
+    opacity: 1;
+  }
+
+  /* Reveal background highlight only on the directly hovered card */
+  .card:hover::after,
+  .card:focus-visible::after {
+    opacity: 1;
+  }
+
   .card:focus-visible {
-    box-shadow:
-      inset 1px 1px 0 rgba(255,255,255,0.2),
-      inset -1px -1px 0 rgba(0,0,0,0.5),
-      2px 2px 0 rgba(0,0,0,0.5),
-      0 0 30px var(--card-glow, rgba(255,45,120,0.5)),
-      0 0 70px var(--card-glow-wide, rgba(255,45,120,0.15));
-    transform: scale(1.03) rotate(-0.4deg);
     outline: none;
   }
+}
+
+/* Inner content surface — sits 1px inset so the ::before border glow peeks through */
+@utility card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  inset: 1px;
+  border-radius: 7px;
+  background: linear-gradient(145deg, var(--color-void-mid), var(--color-void-surface));
+  z-index: 1;
+  /* Subtle top-left chrome highlight */
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.08);
 }
 
 /* Coloured side stripe — the "cartridge edge" */
 @utility card-stripe {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
   width: 4px;
+  border-radius: 6px 0 0 6px;
   background: var(--card-accent, var(--color-sunset-magenta));
-  box-shadow: 0 0 12px var(--card-accent, var(--color-sunset-magenta));
+  box-shadow: 0 0 10px var(--card-accent, var(--color-sunset-magenta));
+  z-index: 2;
 }
 
 /* ============================================================
